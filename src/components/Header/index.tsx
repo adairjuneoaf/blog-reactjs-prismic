@@ -4,9 +4,9 @@ import headerStyles from './header.module.scss';
 const Header: React.FC = () => {
   return (
     <section className={commonStyles.main}>
-      <div className={headerStyles.header}>
+      <a href="/" className={headerStyles.header}>
         <img src="/logo.svg" alt="logo" />
-      </div>
+      </a>
     </section>
   );
 };

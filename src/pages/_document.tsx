@@ -7,6 +7,8 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
 
+          <link rel="icon" href="/ico.png" type="image/png" />
+
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
 
