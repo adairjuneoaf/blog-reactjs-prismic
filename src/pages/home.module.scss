@@ -1,1 +1,37 @@
-// TODO
+.homePagePosts {
+  padding: 3rem 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.5rem;
+
+  h1 {
+    line-height: 2.5rem;
+  }
+
+  p {
+    line-height: 2rem;
+  }
+
+  article {
+    .footerPost {
+      margin-top: 1.5rem;
+
+      display: flex;
+      flex-direction: row;
+
+      gap: 2rem;
+
+      p {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        gap: 0.5rem;
+
+        color: var(--gray-500);
+      }
+    }
+  }
+}
