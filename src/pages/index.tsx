@@ -1,8 +1,8 @@
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 
-import { FiUser } from 'react-icons/fi';
-import { FiCalendar } from 'react-icons/fi';
+import { FiUser, FiCalendar } from 'react-icons/fi';
 
 import getPrismicClient from '../services/prismic';
 
@@ -38,7 +38,50 @@ const Home: NextPage = () => {
       <main className={commonStyles.main}>
         <section className={styles.homePagePosts}>
           <article>
-            <h1>Como utilizar Hooks</h1>
+            <Link href="/">
+              <a>Como utilizar Hooks</a>
+            </Link>
+            <p>Pensando em sincronicação ao invés de ciclos de vida.</p>
+            <div className={styles.footerPost}>
+              <p>
+                <FiCalendar />
+                19 Abr 2021
+              </p>
+              <p>
+                <FiUser />
+                Adair Juneo
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <Link href="/">
+              <a>Criando um app CRA do zero</a>
+            </Link>
+            <p>
+              Tudo sobre como criar a sua primeira aplicação utilizando Create
+              React App.
+            </p>
+            <div className={styles.footerPost}>
+              <p>
+                <FiCalendar />
+                15 Mar 2021
+              </p>
+              <p>
+                <FiUser />
+                Adair Juneo
+              </p>
+              <p>
+                <FiUser />
+                Adair Juneo
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <Link href="/">
+              <a>Como utilizar Hooks</a>
+            </Link>
             <p>Pensando em sincronicação ao invés de ciclos de vida.</p>
             <div className={styles.footerPost}>
               <p>
@@ -53,7 +96,9 @@ const Home: NextPage = () => {
           </article>
 
           <article>
-            <h1>Criando um app CRA do zero</h1>
+            <Link href="/">
+              <a>Criando um app CRA do zero</a>
+            </Link>
             <p>
               Tudo sobre como criar a sua primeira aplicação utilizando Create
               React App.
@@ -61,40 +106,7 @@ const Home: NextPage = () => {
             <div className={styles.footerPost}>
               <p>
                 <FiCalendar />
-                15 Mar 2021
-              </p>
-              <p>
-                <FiUser />
-                Adair Juneo
-              </p>
-            </div>
-          </article>
-
-          <article>
-            <h1>Como utilizar Hooks</h1>
-            <p>Pensando em sincronicação ao invés de ciclos de vida.</p>
-            <div className={styles.footerPost}>
-              <p>
-                <FiCalendar />
-                15 Mar 2021
-              </p>
-              <p>
-                <FiUser />
-                Adair Juneo
-              </p>
-            </div>
-          </article>
-
-          <article>
-            <h1>Criando um app CRA do zero</h1>
-            <p>
-              Tudo sobre como criar a sua primeira aplicação utilizando Create
-              React App.
-            </p>
-            <div className={styles.footerPost}>
-              <p>
-                <FiCalendar />
-                15 Mar 2021
+                19 Abr 2021
               </p>
               <p>
                 <FiUser />
@@ -103,7 +115,9 @@ const Home: NextPage = () => {
             </div>
           </article>
         </section>
-        <a href="/">Carregar mais</a>
+        <a href="/" className={styles.loadMore}>
+          Carregar mais
+        </a>
       </main>
     </>
   );

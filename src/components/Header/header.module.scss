@@ -1,12 +1,16 @@
 .header {
-  display: block;
-  margin-top: 5rem;
-
   width: fit-content;
-  height: fit-content;
+  height: 7rem;
 
-  img {
-    width: auto;
-    height: 28px;
+  display: flex;
+  align-items: center;
+
+  .content {
+    display: block;
+
+    img {
+      width: auto;
+      height: 28px;
+    }
   }
 }

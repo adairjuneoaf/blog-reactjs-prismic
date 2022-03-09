@@ -1,1 +1,66 @@
-// TODO
+.imgBanner {
+  width: 100vw;
+  height: auto;
+}
+.titlePost {
+  margin-top: 4rem;
+}
+.infoPost {
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: row;
+
+  gap: 2rem;
+
+  p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    font-size: 0.875rem;
+
+    gap: 0.5rem;
+
+    color: var(--gray-500);
+  }
+}
+.contentPost {
+  margin-top: 3rem;
+  color: var(--gray-500);
+
+  text-align: justify;
+
+  h2 {
+    font-size: 1.5rem;
+    padding-bottom: 1.875rem;
+  }
+
+  p {
+    line-height: 1.75rem;
+    padding-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    line-height: 1.75rem;
+    padding-bottom: 1.5rem;
+    li {
+      padding-bottom: 1rem;
+
+      &::before {
+        content: '\2022';
+        color: var(--pink-500);
+        font-weight: bold;
+        display: inline-block;
+        width: 16px;
+        margin-left: -16px;
+      }
+    }
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--white-300);
+  }
+}

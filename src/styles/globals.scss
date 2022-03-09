@@ -34,7 +34,9 @@ button {
   color: var(--gray-200);
 }
 
-p {
+p,
+ul,
+strong {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
@@ -52,8 +54,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-strong {
+h6 {
   font-family: 'Inter', sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
