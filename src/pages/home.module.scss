@@ -17,6 +17,7 @@
   article {
     a {
       font-size: 1.75rem;
+      line-height: 2.125rem;
       font-weight: 700;
       color: var(--white-300);
 
@@ -26,8 +27,13 @@
       }
     }
 
+    > p {
+      padding-top: 0.5rem;
+      line-height: 1.375rem;
+    }
+
     .footerPost {
-      margin-top: 1.5rem;
+      margin-top: 0.5rem;
 
       display: flex;
       flex-direction: row;
@@ -39,6 +45,8 @@
         flex-direction: row;
         align-items: center;
 
+        font-size: 0.875rem;
+
         gap: 0.5rem;
 
         color: var(--gray-500);
@@ -48,7 +56,16 @@
 }
 
 .loadMore {
-  &:hover {
-    text-decoration: underline;
+  width: fit-content;
+  height: fit-content;
+  background: transparent;
+  border: 0;
+  color: 0;
+  font-size: 0;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

@@ -6,8 +6,10 @@
 
 :root {
   --blue-900: #1a1d23;
+  --blue-850: #23272f;
 
   --pink-500: #ff57b2;
+  --pink-700: #d34591;
 
   --white-300: #f8f8f8;
 
@@ -22,6 +24,22 @@ body {
 
   overflow-x: hidden;
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.375rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--blue-850);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--pink-500);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--pink-700);
+  }
 }
 
 body,

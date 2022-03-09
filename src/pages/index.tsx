@@ -29,9 +29,9 @@ interface PostPagination {
   results: Post[];
 }
 
-interface HomeProps {
-  postsPagination: PostPagination;
-}
+// interface HomeProps {
+//   postsPagination: PostPagination;
+// }
 
 const Home: NextPage<PostPagination> = ({ next_page, results }) => {
   const [newPosts, setNewPosts] = useState(results);
@@ -86,11 +86,11 @@ const Home: NextPage<PostPagination> = ({ next_page, results }) => {
               <p>{post.data.subtitle}</p>
               <div className={styles.footerPost}>
                 <p>
-                  <FiCalendar />
+                  <FiCalendar fontSize={18} />
                   {post.first_publication_date}
                 </p>
                 <p>
-                  <FiUser />
+                  <FiUser fontSize={18} />
                   {post.data.author}
                 </p>
               </div>
@@ -98,8 +98,12 @@ const Home: NextPage<PostPagination> = ({ next_page, results }) => {
           ))}
         </section>
         {newPagePosts && (
-          <button onClick={loadMorePosts} type="button">
-            <a className={styles.loadMore}>Carregar mais</a>
+          <button
+            onClick={loadMorePosts}
+            type="button"
+            className={styles.loadMore}
+          >
+            <a>Carregar mais</a>
           </button>
         )}
       </main>
