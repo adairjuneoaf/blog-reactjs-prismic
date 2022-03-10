@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Image from 'next/image';
 import Head from 'next/head';
 
 import { format } from 'date-fns';
@@ -7,7 +8,6 @@ import ptBR from 'date-fns/locale/pt-BR';
 import { FiCalendar, FiUser, FiClock } from 'react-icons/fi';
 
 import { RichText } from 'prismic-dom';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import getPrismicClient from '../../services/prismic';
 

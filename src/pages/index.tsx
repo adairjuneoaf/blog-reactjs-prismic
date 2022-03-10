@@ -1,14 +1,15 @@
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { RichText } from 'prismic-dom';
+
+import { useState } from 'react';
 
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
 import { FiUser, FiCalendar } from 'react-icons/fi';
 
-import { useState } from 'react';
+import { RichText } from 'prismic-dom';
 import getPrismicClient from '../services/prismic';
 
 import commonStyles from '../styles/common.module.scss';
