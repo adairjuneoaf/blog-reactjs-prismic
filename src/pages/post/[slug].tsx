@@ -8,6 +8,7 @@ import { FiCalendar, FiUser, FiClock } from 'react-icons/fi';
 
 import { RichText } from 'prismic-dom';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import getPrismicClient from '../../services/prismic';
 
 import commonStyles from '../../styles/common.module.scss';
@@ -40,32 +41,62 @@ type ContentPost = {
 };
 
 const Post: NextPage<PostProps> = ({ post }) => {
+  const { isFallback } = useRouter();
+
+  if (isFallback) {
+    return <p className={commonStyles.main}>Carregando...</p>;
+  }
+
+  function countTimeReadingPost(): number {
+    const countHeadingWords: number = post.data.content.reduce(
+      (acc, currentValue) => {
+        return currentValue.heading.split(/\s+/).length + acc;
+      },
+      0
+    );
+
+    const countBodyWords: number = post.data.content.reduce(
+      (acc, currentValue) => {
+        return RichText.asText(currentValue.body).split(/\s+/).length + acc;
+      },
+      0
+    );
+
+    const minutesReadingPost: number = Math.ceil(
+      (countHeadingWords + countBodyWords) / 200
+    );
+
+    return minutesReadingPost;
+  }
+
   return (
     <>
       <Head>
-        <title>{post.data.title}</title>
+        <title>Adair Juneo | {post.data.title}</title>
       </Head>
       <main>
-        <Image
-          src={post.data.banner.url}
-          width={1920}
-          height={800}
-          alt="banner"
-        />
-
         <article className={commonStyles.main}>
-          <h1 className={styles.titlePost}>Criando um app CRA do zero</h1>
+          <Image
+            src={post.data.banner.url}
+            width={1440}
+            height={600}
+            alt="banner"
+          />
+          <h1 className={styles.titlePost}>{post.data.title}</h1>
           <div className={styles.infoPost}>
             <p>
-              <FiCalendar fontSize={18} />
+              <FiCalendar fontSize={18} title="Data de publicação" />
               {post.first_publication_date}
             </p>
             <p>
-              <FiUser fontSize={18} />
+              <FiUser fontSize={18} title="Autor" />
               {post.data.author}
             </p>
             <p>
-              <FiClock fontSize={18} />4 min
+              <FiClock fontSize={18} title="Tempo de leitura" />
+              {`${countTimeReadingPost()} ${
+                countTimeReadingPost() > 1 ? 'Minutos' : 'Minuto'
+              }`}
             </p>
           </div>
           <aside className={styles.contentPost}>
@@ -105,7 +136,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: true,
   };
 };
 

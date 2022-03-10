@@ -32,9 +32,14 @@
     padding-bottom: 1.875rem;
   }
 
+  h5 {
+    font-size: 1.125rem;
+    padding-bottom: 1.5rem;
+  }
+
   p {
     line-height: 1.75rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.125rem;
   }
 
   ul {
@@ -55,8 +60,19 @@
     }
   }
 
+  pre {
+    padding: 1.5rem 1rem;
+    background: var(--blue-850);
+    margin-bottom: 0.5rem;
+
+    font-size: 1rem;
+    color: var(--white-300);
+
+    border-radius: 0.5rem;
+  }
+
   strong {
     font-weight: 600;
-    color: var(--white-300);
+    color: var(--pink-500);
   }
 }

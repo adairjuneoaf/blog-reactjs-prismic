@@ -81,16 +81,16 @@ const Home: NextPage<PostPagination> = ({ next_page, results }) => {
           {newPosts.map(post => (
             <article key={post.uid}>
               <Link href={`post/${post.uid}`}>
-                <a>{post.data.title}</a>
+                <a title="Navegar até a publicação">{post.data.title}</a>
               </Link>
               <p>{post.data.subtitle}</p>
               <div className={styles.footerPost}>
                 <p>
-                  <FiCalendar fontSize={18} />
+                  <FiCalendar fontSize={18} title="Data de publicação" />
                   {post.first_publication_date}
                 </p>
                 <p>
-                  <FiUser fontSize={18} />
+                  <FiUser fontSize={18} title="Autor" />
                   {post.data.author}
                 </p>
               </div>
@@ -103,7 +103,7 @@ const Home: NextPage<PostPagination> = ({ next_page, results }) => {
             type="button"
             className={styles.loadMore}
           >
-            <a>Carregar mais</a>
+            <a title="Carregar mais posts">Carregar mais</a>
           </button>
         )}
       </main>
