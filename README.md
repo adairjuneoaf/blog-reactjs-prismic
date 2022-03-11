@@ -12,7 +12,7 @@
   <img alt="next-blog" src=".github/next.blog.png" width="auto">
 </p>
 
-Você pode acessar o projeto WEB clicando neste link [acessar projeto](http://blog-reactjs-nextjs-prismic.vercel.app/)
+Você pode acessar o projeto WEB clicando neste link [acessar projeto](https://blog-template-adairjuneo.vercel.app/)
 
 O next.blog é um template de blog que pode ser utilizado em qualquer cenário, onde o intuito seja disponibilizar um contéudo atraves de um artigo ou publicação simples para comunidade. É necessário apenas que o seu site ou aplicação já utilize React e NextJS, a integração será bem rápida. Para criar as publicações, utilizei o Prismic.io, um CMS gratuito e muito prático, além da facilidade de integração com o ambiente do NextJS.
 
